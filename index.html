@@ -1,0 +1,561 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 500px;
+            background: hsl(0deg 0% 21.18%);
+            gap: 90px;
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        .card {
+            display: grid;
+            position: relative;
+            bottom: 20px;
+            padding: 20px;
+
+
+        }
+
+        .card--yellow>.card__top{
+            background: linear-gradient(rgb(248 149 39), rgb(255 199 27));
+            color: white;
+        }
+
+        .card--yellow .card__bottom__size__numbers__child-selector{
+            background: linear-gradient(rgb(248 149 39), rgb(255 199 27));
+            color: white;
+        }
+
+        .card__top {
+            display: flex;
+            flex-direction: column;
+            border-radius: 30px 30px 0px 0px;
+            overflow: hidden;
+        }
+
+        .card__top__tennis {
+            padding: 20px 30px 0px 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card__top__tennis__icon>img {
+            width: 80px;
+            height: 80px;
+            filter: invert(100%);
+        }
+
+        .card__top__tennis__text>b {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .card__top__tennis__text>div {
+            font-size: 20px;
+            margin-top: 10px;
+            margin-right: 188px;
+        }
+
+        .card__top__bottom {
+            margin-bottom: -80px;
+            font-size: 250px;
+            opacity: 0.1;
+            letter-spacing: -4px;
+            font-weight: bold;
+            position: relative;
+            right: 11px;
+            color: black;
+        }
+
+        .card__top__bottom--space {
+            letter-spacing: 10px;
+            opacity: 0.05;
+
+        }
+
+        .card__top__tenis__image>img {
+            transform: rotate(-33deg);
+            position: absolute;
+            top: -142px;
+            right: -115px;
+            width: 600;
+            transition: 0.5s;
+        }
+
+        .card:hover .card__top__tenis__image>img{
+            transform: scale(1.1) rotate(-25deg);
+        }
+
+        /*card-white*/
+
+        .card__bottom {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 0px 0px 30px 30px;
+            padding: 40px;
+            gap: 20px;
+
+        }
+
+        .card__bottom__header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+        }
+
+        .card__bottom__header__title {
+            display: flex;
+            align-items: center;
+        }
+        .card__bottom__header__title>div {
+            font-size: 30px;
+        }
+
+        .card__bottom__header__title>b {
+            font-size: 30px;
+        }
+
+        .card__bottom__header__title>span {
+            font-size: 15px;
+            margin-left: 30px;
+            background-color: hsl(14.71deg 99.05% 58.82%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+
+        }
+
+        .card__bottom__header__title>.new--green{
+            background-color: rgb(1, 235, 84);
+        }
+
+        .card__bottom__header__brand {
+            font-size: 15px;
+        }
+
+        .card__bottom__header__star {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .card__bottom__size {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card__bottom__size>b {
+            font-size: 20px;
+        }
+
+        .card__bottom__size__numbers {
+            display: flex;
+            gap: 50px;
+            font-size: 20px;
+
+        }
+
+        .card__bottom__size__numbers__child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card__bottom__size__numbers__child.card__bottom__size__numbers__child-selector {
+            /*background: rgb(255 197 0);*/
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+
+        }
+
+
+
+        .card__bottom__color {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card__bottom__color>b {
+            font-size: 20px;
+        }
+
+        .card__bottom__color__circles {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .circles {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .circles__child {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+
+        .circles--blue>.circles__child--blue {
+            background: rgb(5, 201, 253);
+        }
+
+        .circles--orange>.circles__child--orange {
+            background: rgb(241, 68, 51);
+        }
+
+        .circles--purple>.circles__child--purple{
+            background: rgb(66, 62, 102);
+        }
+
+        .circles--green>.circles__child--green {
+            background: rgb(0, 237, 87);
+        }
+
+        .circles--yellow>.circles__child--yellow{
+            background: rgb(254, 213, 7);
+        }
+
+
+        .circles--blue.circles--select {
+            border: 2px solid rgb(5, 201, 253);
+        }
+
+        .circles--orange.circles--select {
+            border: 2px solid rgb(241, 68, 51);
+        }
+
+        .circles--purple.circles--select {
+            border: 2px solid black;
+        }
+
+        .circles--green.circles--select{
+            border: 2px solid rgb(0, 237, 87);
+        }
+
+        .circles--yellow.circles--select{
+            border: 2px solid rgb(254, 213, 7);
+        }
+
+
+        .price {
+            width: 300px;
+            height: 80px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            gap: 20px;
+            color: white;
+            position: relative;
+            right: -60px;
+        }
+
+        .price--blue {
+            background: rgb(1, 203, 237);
+            box-shadow: rgba(1, 203, 237, 0.7) 0px 4px 12px;
+
+        }
+
+        .price--green {
+            background: rgb(1, 235, 85);
+            box-shadow: rgb(1, 235, 85, 0.7) 0px 4px 12px;
+
+        }
+
+        .card--orange>.card__top {
+            background: linear-gradient(to right, #fc741e, #cf222f);
+            color: white;
+        }
+
+        .card--orange .card__bottom__size__numbers__child-selector{
+            background: linear-gradient(to right, #fc741e, #cf222f);
+            color: white;
+        }
+
+        .card__top__tenis__image--position>img {
+            transform: rotate(20deg);
+            position: absolute;
+            top: -10px;
+            right: -190px;
+            width: 580;
+            transition: 0.5s;
+        }
+
+        .card:hover .card__top__tenis__image--position>img{
+            transform: scale(1.1) rotate(10deg);
+            
+        }
+
+
+
+
+
+
+        @media screen and (max-width: 750px) {
+            body {
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="card card--yellow">
+        <!-- Start yelow -->
+        <div class="card__top">
+            <div class="card__top__tennis">
+                <div class="card__top__tennis__icon">
+                    <img src="img/logo_nike.png" />
+                </div>
+
+                <div class="card__top__tenis__image">
+                    <img src="img/tenis_nike.png" />
+                </div>
+
+                <div class="card__top__tennis__text">
+                    <b>
+                        AIR STRUCTUR
+                    </b>
+                    <div>
+                        Dinamyc Support and Nike
+                        come together for a more
+                        with hight-speed respons
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card__top__bottom">
+                SOFA
+            </div>
+        </div>
+
+        <!-- End yelow -->
+
+
+        <!-- Start-white -->
+        <div class="card__bottom">
+            <div class="card__bottom__header">
+                <div class="card__bottom__header__title">
+                    <b>
+                        AIR STRUCTURE 19
+                    </b>
+                    <span>
+                        NEW
+                    </span>
+                </div>
+                <div class="card__bottom__header__brand">
+                    RUNNING COLLECTIONS
+                </div>
+                <div class="card__bottom__header__star">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star" style="color: rgb(150 151 148);"></i>
+                    <i class="fa-solid fa-star" style="color: rgb(150 151 148);"></i>
+
+                </div>
+            </div>
+
+            <div class="card__bottom__size">
+                <b>
+                    SIZE
+                </b>
+                <div class="card__bottom__size__numbers">
+                    <div class="card__bottom__size__numbers__child">
+                        7
+                    </div>
+                    <div class="card__bottom__size__numbers__child">
+                        8
+                    </div>
+                    <div class="card__bottom__size__numbers__child card__bottom__size__numbers__child-selector">
+                        9
+                    </div>
+                    <div class="card__bottom__size__numbers__child">
+                        10
+                    </div>
+                    <div class="card__bottom__size__numbers__child">
+                        11
+                    </div>
+                </div>
+            </div>
+
+            <div class="card__bottom__color">
+                <b>
+                    COLOR
+                </b>
+                <div class="card__bottom__color__circles">
+                    <div class="circles circles--blue circles--select">
+                        <div class="circles__child circles__child--blue">
+                        </div>
+                    </div>
+
+                    <div class="circles circles--orange">
+                        <div class="circles__child circles__child--orange">
+                        </div>
+                    </div>
+
+                    <div class="circles circles--purple">
+                        <div class="circles__child circles__child--purple">
+                        </div>
+                    </div>
+
+                    <div class="price price--blue">
+                        USD
+                        <b> 12,995</b>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- End card -->
+
+    <!-- Start card-orange -->
+    <div class="card card--orange">
+        <div class="card__top">
+            <div class="card__top__tennis">
+                <div class="card__top__tennis__icon">
+                    <img src="img/logo_nike.png" />
+                </div>
+
+                <div class="card__top__tenis__image--position">
+                    <img src="img/nike-naranja.png" />
+                </div>
+
+                <div class="card__top__tennis__text">
+                    <b>
+                        HARTBEESPO
+                    </b>
+                    <div>
+                        Support and Nike Zoom
+                        come togheter for a
+                        with high speed
+                    </div>
+                </div>
+            </div>
+            <div class="card__top__bottom card__top__bottom--space">
+                FAS
+            </div>
+        </div>
+
+        <div class="card__bottom">
+            <div class="card__bottom__header">
+                <div class="card__bottom__header__title">
+                    <div> HARTBEE</div>
+                    <b>
+                        SPOORT
+                    </b>
+                    <span class="new--green">
+                        NEW
+                    </span>
+                </div>
+
+                <div class="card__bottom__header__brand">
+                    BASKET BALL COLLECTIONS
+                </div>
+                <div class="card__bottom__header__star">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star" style="color: rgb(150 151 148);"></i>
+                </div>
+            </div>
+
+            <div class="card__bottom__size">
+                <b>
+                    SIZE
+                </b>
+                <div class="card__bottom__size__numbers">
+                    <div class="card__bottom__size__numbers__child">
+                        7
+                    </div>
+                    <div class="card__bottom__size__numbers__child">
+                        8
+                    </div>
+                    <div class="card__bottom__size__numbers__child">
+                        9
+                    </div>
+                    <div class="card__bottom__size__numbers__child card__bottom__size__numbers__child-selector">
+                        10
+                    </div>
+                    <div class="card__bottom__size__numbers__child">
+                        11
+                    </div>
+                </div>
+            </div>
+
+            <div class="card__bottom__color">
+                <b>
+                    COLOR
+                </b>
+                <div class="card__bottom__color__circles">
+                    <div class="circles circles--orange circles--select">
+                        <div class="circles__child circles__child--orange">
+                        </div>
+                    </div>
+
+                    <div class="circles circles--green">
+                        <div class="circles__child circles__child--green">
+                        </div>
+                    </div>
+
+                    <div class="circles circles--yellow">
+                        <div class="circles__child circles__child--yellow">
+                        </div>
+                    </div>
+
+                    <div class="price price--green">
+                        USD
+                        <b> 24,453</b>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End card-orange -->
+</body>
+
+</html>
